@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Горное мясо — халяль магазин в Архызе</title>
+<meta name="description" content="Горное мясо — всё халяль. Натуральные продукты, свежесть и настоящий вкус Кавказа! Архыз, ул. Ленина, 35.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --night:#0b1a1d; --spruce:#14272a; --card:#112226; --line:rgba(255,255,255,.12);
+  --text:#e9f1ee; --muted:#9db0aa; --neon-g:#5ee59a; --neon-r:#ff4a45;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:"PT Sans",system-ui,sans-serif;background:var(--night);color:var(--text);line-height:1.6;font-size:18px;overflow-x:hidden}
+h1,h2,h3{font-family:Oswald,"Arial Narrow",Impact,sans-serif;font-weight:700;line-height:1.05}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--neon-r);outline-offset:3px}
+
+/* Навигация */
+.nav{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:14px 6vw;
+  background:rgba(11,26,29,.6);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .logo{font-family:Oswald,sans-serif;font-weight:700;font-size:22px;text-decoration:none;letter-spacing:.02em}
+.nav .logo b{color:var(--neon-g)} .nav .logo i{font-style:normal;color:var(--neon-r)}
+.nav-links{display:flex;gap:16px;align-items:center}
+.nav-links a,.nav-links button{text-decoration:none;color:var(--muted);font-size:16px;transition:color .2s}
+.nav-links a:hover{color:#fff}
+.nav-links a.tel{color:#fff;font-weight:700;border:2px solid var(--neon-g);padding:7px 16px;border-radius:999px;transition:.25s}
+.nav-links a.tel:hover{background:var(--neon-g);color:var(--night)}
+.acct{background:none;border:1px solid var(--line);border-radius:999px;padding:7px 14px;cursor:pointer;font-family:inherit;color:#fff!important}
+.acct:hover{border-color:var(--neon-r)}
+@media(max-width:900px){.nav-links a:not(.tel){display:none}.acct{font-size:14px;padding:6px 10px}}
+
+/* Hero */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:120px 6vw 140px;overflow:hidden;
+  background:radial-gradient(ellipse at 70% 10%,#1e4a48 0%,transparent 55%),linear-gradient(#0b1a1d,#102a2b 70%,#14272a)}
+#snow{position:absolute;inset:0;width:100%;height:100%;z-index:3;pointer-events:none}
+.layer{position:absolute;left:-5%;width:110%;bottom:0;z-index:1;will-change:transform}
+.layer svg{display:block;width:100%;height:auto}
+.l1{opacity:.55}.l2{opacity:.8}.l3{z-index:2}
+.hero-body{position:relative;z-index:4;max-width:1100px;margin:0 auto;width:100%}
+.hero h1{font-size:clamp(60px,14vw,170px);text-transform:uppercase;letter-spacing:.01em}
+.hero h1 span{display:block}
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px;opacity:0;animation:rise .9s 3.4s cubic-bezier(.2,.8,.2,1) forwards}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:7px 16px;border-radius:999px;border:1px solid var(--line);background:rgba(11,26,29,.6);font-weight:700;font-size:16px}
+.badge.halal{border-color:var(--neon-g);color:var(--neon-g)}
+.dot{width:10px;height:10px;border-radius:50%;background:#777}
+.badge.open .dot{background:var(--neon-g);box-shadow:0 0 10px var(--neon-g)}
+.badge.closed .dot{background:var(--neon-r);box-shadow:0 0 10px var(--neon-r)}
+
+/* Неоновая вывеска */
+.hero h1 .g{color:var(--neon-g);text-shadow:0 0 18px rgba(94,229,154,.6),0 0 60px rgba(94,229,154,.35);animation:onG 2.6s .3s both}
+.hero h1 .r{color:var(--neon-r);text-shadow:0 0 18px rgba(255,74,69,.6),0 0 60px rgba(255,74,69,.35);animation:onR 3.4s 1.6s both}
+@keyframes onG{
+  0%,6%   {color:#1b3a30;text-shadow:none}
+  8%      {color:#5ee59a;text-shadow:0 0 18px rgba(94,229,154,.6),0 0 60px rgba(94,229,154,.35)}
+  10%,16% {color:#1b3a30;text-shadow:none}
+  18%     {color:#5ee59a;text-shadow:0 0 18px rgba(94,229,154,.6),0 0 60px rgba(94,229,154,.35)}
+  20%     {color:#1b3a30;text-shadow:none}
+  24%     {color:#5ee59a;text-shadow:0 0 18px rgba(94,229,154,.6),0 0 60px rgba(94,229,154,.35)}
+  26%,34% {color:#1b3a30;text-shadow:none}
+  36%,100%{color:#5ee59a;text-shadow:0 0 18px rgba(94,229,154,.6),0 0 60px rgba(94,229,154,.35)}
+}
+@keyframes onR{
+  0%,5%   {color:#3d1f1f;text-shadow:none}
+  7%      {color:#ff4a45;text-shadow:0 0 18px rgba(255,74,69,.6),0 0 60px rgba(255,74,69,.35)}
+  9%,15%  {color:#3d1f1f;text-shadow:none}
+  17%     {color:#ff4a45;text-shadow:0 0 18px rgba(255,74,69,.6),0 0 60px rgba(255,74,69,.35)}
+  19%,27% {color:#3d1f1f;text-shadow:none}
+  29%     {color:#ff4a45;text-shadow:0 0 18px rgba(255,74,69,.6),0 0 60px rgba(255,74,69,.35)}
+  31%     {color:#3d1f1f;text-shadow:none}
+  33%     {color:#ff4a45;text-shadow:0 0 18px rgba(255,74,69,.6),0 0 60px rgba(255,74,69,.35)}
+  35%,48% {color:#3d1f1f;text-shadow:none}
+  50%     {color:#ff4a45;text-shadow:0 0 18px rgba(255,74,69,.6),0 0 60px rgba(255,74,69,.35)}
+  52%,58% {color:#3d1f1f;text-shadow:none}
+  60%,100%{color:#ff4a45;text-shadow:0 0 18px rgba(255,74,69,.6),0 0 60px rgba(255,74,69,.35)}
+}
+
+.slogan{max-width:30ch;font-size:clamp(20px,2.6vw,28px);margin-top:24px;color:#d8e6e1;opacity:0;animation:rise .9s 3.6s cubic-bezier(.2,.8,.2,1) forwards}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px;opacity:0;animation:rise .9s 4s cubic-bezier(.2,.8,.2,1) forwards}
+.btn{display:inline-block;text-decoration:none;font-weight:700;padding:15px 26px;border-radius:12px;transition:transform .2s,box-shadow .2s,background .2s;border:0;font-family:inherit;font-size:inherit;cursor:pointer;color:inherit;text-align:center}
+.btn:hover{transform:translateY(-3px)}
+.btn.main{background:var(--neon-r);color:#fff;box-shadow:0 8px 28px rgba(255,74,69,.35)}
+.btn.main:hover{box-shadow:0 12px 36px rgba(255,74,69,.55)}
+.btn.alt{border:2px solid #cfdcd7;background:none}
+.btn.alt:hover{background:#fff;color:var(--night)}
+.btn.wa{background:#25d366;color:#06240f}
+.btn.tg{background:#2aabee;color:#04202e}
+.scroll{position:absolute;z-index:4;left:50%;bottom:26px;width:26px;height:42px;border:2px solid #cfdcd7;border-radius:14px;transform:translateX(-50%);opacity:.7}
+.scroll::after{content:"";position:absolute;left:50%;top:8px;width:4px;height:8px;margin-left:-2px;border-radius:2px;background:#fff;animation:wheel 1.6s infinite}
+@keyframes rise{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+@keyframes wheel{0%{opacity:0;transform:translateY(0)}30%{opacity:1}100%{opacity:0;transform:translateY(14px)}}
+
+/* Бегущая строка */
+.ticker{background:var(--neon-r);color:#fff;overflow:hidden;white-space:nowrap;transform:rotate(-1.2deg);margin:-26px -2vw 0;position:relative;z-index:6;box-shadow:0 10px 40px rgba(0,0,0,.4)}
+.ticker div{display:inline-block;padding:14px 0;font-family:Oswald,sans-serif;font-size:24px;text-transform:uppercase;letter-spacing:.06em;animation:marq 32s linear infinite}
+.ticker span{margin:0 18px}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+/* Секции */
+section{padding:96px 6vw}
+.wrap{max-width:1150px;margin:0 auto}
+h2{font-size:clamp(38px,6vw,68px);margin-bottom:12px;text-transform:uppercase}
+.sub{color:var(--muted);max-width:52ch;margin-bottom:48px}
+
+/* Карточки ассортимента */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:22px}
+.card{--c:var(--neon-g);position:relative;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:30px;overflow:hidden;
+  transition:transform .3s,border-color .3s,box-shadow .3s}
+.card::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at var(--mx,50%) var(--my,0%),color-mix(in srgb,var(--c) 28%,transparent),transparent 60%);opacity:0;transition:opacity .3s}
+.card:hover{transform:translateY(-8px);border-color:var(--c);box-shadow:0 18px 50px color-mix(in srgb,var(--c) 25%,transparent)}
+.card:hover::before{opacity:1}
+.card>*{position:relative}
+.ico{font-size:54px;display:inline-block;transition:transform .4s cubic-bezier(.3,1.6,.5,1)}
+.card:hover .ico{transform:scale(1.25) rotate(-8deg)}
+.card h3{font-size:30px;margin:10px 0 16px;text-transform:uppercase}
+.tags{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.tags li{font-size:16px;padding:6px 14px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.04);transition:.2s}
+.tags li:hover{background:var(--c);border-color:var(--c);color:var(--night);transform:scale(1.06)}
+.c1{--c:#ff4a45}.c2{--c:#ff9b3d}.c3{--c:#4cc3ff}.c4{--c:#f3f0e0}.c5{--c:#ffd23d}.c6{--c:#5ee59a}.c7{--c:#ff6a3d}
+
+/* Появление при прокрутке */
+.reveal{opacity:0;transform:translateY(50px) scale(.97);transition:opacity .8s,transform .8s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--i,0)*90ms)}
+.reveal.in{opacity:1;transform:none}
+.card.reveal.in:hover{transform:translateY(-8px)}
+
+/* Халяль */
+.halalsec{background:linear-gradient(135deg,#0f3a34,#14272a);text-align:center}
+.halalsec .seal{width:120px;height:120px;margin:0 auto 20px;border-radius:50%;border:3px solid var(--neon-g);display:grid;place-items:center;font-family:Oswald,sans-serif;font-size:26px;color:var(--neon-g);text-shadow:0 0 18px rgba(94,229,154,.6);box-shadow:0 0 40px rgba(94,229,154,.25),inset 0 0 30px rgba(94,229,154,.15)}
+.halalsec p{max-width:56ch;margin:0 auto;color:#cfe0da}
+
+/* Мясо дня */
+.prod{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+.pi{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:6px}
+.pi .e{font-size:36px}
+.pi b{font-size:20px}
+.pi .pr{color:var(--neon-g);font-weight:700}
+.pi .pr.no{color:var(--muted);font-weight:400}
+
+/* Заказ */
+.order{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;align-items:start}
+.box{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px}
+.box h3{font-size:28px;text-transform:uppercase;margin-bottom:12px}
+.box p{color:var(--muted)}
+.fld{display:block;width:100%;background:#0b1a1d;color:var(--text);border:1px solid var(--line);border-radius:12px;padding:13px 15px;font:inherit;margin-bottom:12px}
+.fld:focus{border-color:var(--neon-g);outline:0}
+textarea.fld{min-height:110px;resize:vertical}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.msg{min-height:1.4em;font-size:15px;color:var(--neon-r);margin-bottom:8px}
+
+/* Галерея */
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.gal figure{aspect-ratio:4/3;border-radius:20px;overflow:hidden;border:1px solid var(--line);background:var(--card);display:grid;place-items:center;position:relative}
+.gal img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.gal figure:hover img{transform:scale(1.07)}
+.gal .ph{font-size:64px;opacity:.5}
+
+/* Слоган-блок */
+.quote{text-align:center;background:linear-gradient(135deg,#14272a,#0f3a34)}
+.quote p{font-family:Oswald,sans-serif;font-weight:700;font-size:clamp(30px,5vw,60px);line-height:1.15;max-width:22ch;margin:0 auto;text-transform:uppercase}
+.quote em{font-style:normal;color:var(--neon-g);text-shadow:0 0 30px rgba(94,229,154,.5)}
+
+/* Отзывы */
+.rv-top{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;align-items:start;margin-bottom:36px}
+.stars{display:flex;gap:4px;margin:6px 0 14px}
+.stars button{background:none;border:0;font-size:34px;line-height:1;cursor:pointer;color:#3a4b4e;transition:transform .15s,color .15s}
+.stars button.on{color:#ffd23d;text-shadow:0 0 14px rgba(255,210,61,.5)}
+.stars button:hover{transform:scale(1.2)}
+.list{display:grid;gap:16px}
+.rev{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+.rev header{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline}
+.rev b{font-size:20px}
+.rev .st{color:#ffd23d;letter-spacing:2px}
+.rev time{color:var(--muted);font-size:14px}
+.rev p{margin-top:8px;white-space:pre-wrap;word-break:break-word}
+.reply{margin-top:12px;padding:12px 16px;border-left:3px solid var(--neon-g);background:rgba(94,229,154,.07);border-radius:0 10px 10px 0;font-size:16px}
+.reply small{display:block;color:var(--neon-g);font-weight:700}
+.ops{display:flex;gap:10px;margin-top:12px}
+.ops button{background:none;border:1px solid var(--line);color:var(--muted);border-radius:8px;padding:5px 12px;cursor:pointer;font:inherit;font-size:15px}
+.ops button:hover{border-color:var(--neon-r);color:#fff}
+.empty{color:var(--muted);text-align:center;padding:30px}
+.ownerbar{background:rgba(255,74,69,.12);border:1px solid var(--neon-r);border-radius:14px;padding:12px 18px;margin-bottom:24px;display:none}
+
+/* Окно входа */
+.modal{position:fixed;inset:0;z-index:100;display:none;place-items:center;background:rgba(5,12,14,.75);backdrop-filter:blur(6px);padding:18px}
+.modal.open{display:grid}
+.dlg{width:min(440px,100%);background:var(--spruce);border:1px solid var(--line);border-radius:22px;padding:28px;position:relative}
+.dlg .x{position:absolute;right:14px;top:10px;background:none;border:0;color:var(--muted);font-size:30px;cursor:pointer}
+.tabs{display:flex;gap:6px;margin-bottom:18px;flex-wrap:wrap}
+.tabs button{flex:1;background:none;border:1px solid var(--line);color:var(--muted);border-radius:10px;padding:9px 6px;cursor:pointer;font:inherit;font-size:15px}
+.tabs button.on{background:var(--neon-g);color:var(--night);border-color:var(--neon-g);font-weight:700}
+.dlg form{display:none}.dlg form.on{display:block}
+.dlg .btn{width:100%}
+
+/* Контакты */
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:40px;align-items:start}
+.row{padding:18px 0;border-top:1px solid var(--line)}
+.row small{display:block;color:var(--muted);font-size:15px}
+.row a,.row .v{font-size:24px;font-weight:700;text-decoration:none}
+.row a{background:linear-gradient(var(--neon-g),var(--neon-g)) 0 100%/0 2px no-repeat;transition:background-size .3s}
+.row a:hover{background-size:100% 2px}
+.msgr{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.map{border:1px solid var(--line);border-radius:20px;overflow:hidden;min-height:340px;background:var(--card)}
+.map iframe{width:100%;height:100%;min-height:340px;border:0;display:block}
+.pulse{animation:pulse 2.2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,74,69,.6)}70%,100%{box-shadow:0 0 0 18px rgba(255,74,69,0)}}
+footer{padding:26px 6vw;color:var(--muted);font-size:15px;border-top:1px solid var(--line)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+/* Плавающие кнопки */
+.fabs{position:fixed;right:18px;bottom:18px;z-index:60;display:flex;flex-direction:column;gap:12px}
+.fab{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;text-decoration:none;font-size:26px;box-shadow:0 8px 28px rgba(0,0,0,.4)}
+.fab.call{background:var(--neon-r);animation:pulse 2.2s infinite}
+.fab.wa{background:#25d366}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .slogan,.cta,.badges,.reveal{opacity:1!important;transform:none!important}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="logo" href="#top"><b>Горное</b> <i>мясо</i></a>
+  <div class="nav-links">
+    <a href="#assortiment">Ассортимент</a>
+    <a href="#ceny">Мясо дня</a>
+    <a href="#zakaz">Заказ</a>
+    <a href="#otzyvy">Отзывы</a>
+    <a href="#kontakty">Контакты</a>
+    <button class="acct" id="acct" type="button">Войти</button>
+    <a class="tel" href="tel:+79886060203">+7 (988) 606-02-03</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <canvas id="snow"></canvas>
+  <div class="layer l1" data-speed=".12"><svg viewBox="0 0 1200 300" preserveAspectRatio="none"><path d="M0 300V170l110-90 80 50 130-120 120 110 90-60 140 130 120-90 110 70 100-50 100 80V300z" fill="#1d4545"/></svg></div>
+  <div class="layer l2" data-speed=".22"><svg viewBox="0 0 1200 260" preserveAspectRatio="none"><path d="M0 260V150l150-80 100 60 130-100 150 120 120-70 160 100 130-60 260 80V260z" fill="#173635"/></svg></div>
+  <div class="layer l3" data-speed=".34"><svg viewBox="0 0 1200 200" preserveAspectRatio="none"><path d="M0 200V120l170-50 120 50 160-70 140 80 150-40 180 60 140-40 140 50V200z" fill="#0b1a1d"/></svg></div>
+
+  <div class="hero-body">
+    <h1><span class="g">Горное</span><span class="r">мясо</span></h1>
+    <div class="badges">
+      <span class="badge halal">☪ Всё халяль</span>
+      <span class="badge" id="openBadge"><i class="dot"></i><span id="openText">Часы работы</span></span>
+    </div>
+    <p class="slogan">Натуральные продукты, свежесть и настоящий вкус Кавказа!</p>
+    <div class="cta">
+      <a class="btn main pulse" href="tel:+79886060203">Позвонить</a>
+      <a class="btn wa" id="waBtn" href="#" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn alt" href="#assortiment">Смотреть ассортимент</a>
+    </div>
+  </div>
+  <div class="scroll" aria-hidden="true"></div>
+</header>
+
+<div class="ticker" aria-hidden="true">
+  <div>
+    <span>Халяль</span>•<span>Говядина</span>•<span>Баранина</span>•<span>Курица</span>•<span>Люля-кебаб</span>•<span>Форель</span>•<span>Домашний соус</span>•<span>Уголь для мангала</span>•<span>Варенье</span>•<span>Орехи</span>•
+    <span>Халяль</span>•<span>Говядина</span>•<span>Баранина</span>•<span>Курица</span>•<span>Люля-кебаб</span>•<span>Форель</span>•<span>Домашний соус</span>•<span>Уголь для мангала</span>•<span>Варенье</span>•<span>Орехи</span>•
+  </div>
+</div>
+
+<section id="assortiment">
+  <div class="wrap">
+    <h2 class="reveal">Наш ассортимент</h2>
+    <p class="sub reveal" style="--i:1">Всё для хорошего стола в горах: от свежего мяса до угля для мангала.</p>
+    <div class="grid">
+
+      <article class="card c1 reveal" style="--i:0">
+        <span class="ico">🥩</span><h3>Мясо</h3>
+        <ul class="tags"><li>Говядина</li><li>Баранина</li><li>Курица</li><li>Свежее мясо</li><li>Маринованное мясо</li><li>Фарш</li><li>Мякоть</li><li>Печень</li><li>Сеточка</li></ul>
+      </article>
+
+      <article class="card c2 reveal" style="--i:1">
+        <span class="ico">🍢</span><h3>Полуфабрикаты</h3>
+        <ul class="tags"><li>Люля-кебаб</li><li>Мясные полуфабрикаты</li><li>Колбаски</li><li>Маринованные заготовки</li></ul>
+      </article>
+
+      <article class="card c3 reveal" style="--i:2">
+        <span class="ico">🐟</span><h3>Рыба</h3>
+        <ul class="tags"><li>Форель</li><li>Стейки форели</li><li>Стейки сёмги</li><li>Рыбная продукция</li></ul>
+      </article>
+
+      <article class="card c4 reveal" style="--i:0">
+        <span class="ico">🥛</span><h3>Молочная продукция</h3>
+        <ul class="tags"><li>Молочная продукция</li><li>Молочные полуфабрикаты</li></ul>
+      </article>
+
+      <article class="card c5 reveal" style="--i:1">
+        <span class="ico">🧂</span><h3>Специи и соусы</h3>
+        <ul class="tags"><li>Специи</li><li>Маринады</li><li>Домашний соус</li></ul>
+      </article>
+
+      <article class="card c6 reveal" style="--i:2">
+        <span class="ico">🥬</span><h3>Дополнительные продукты</h3>
+        <ul class="tags"><li>Овощи</li><li>Варенье</li><li>Сладости</li><li>Орехи</li><li>Маршмеллоу</li><li>Вода</li><li>Чай</li></ul>
+      </article>
+
+      <article class="card c7 reveal" style="--i:0">
+        <span class="ico">🔥</span><h3>Для отдыха и мангала</h3>
+        <ul class="tags"><li>Уголь</li><li>Розжиг</li><li>Товары для костра</li><li>Одноразовая посуда</li><li>Салфетки</li></ul>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="halalsec">
+  <div class="wrap">
+    <div class="seal reveal">ХАЛЯЛЬ</div>
+    <h2 class="reveal" style="--i:1">У нас всё халяль</h2>
+    <p class="reveal" style="--i:2">Вся продукция в нашем магазине халяль. Приходите за мясом, полуфабрикатами и всем для стола без сомнений.</p>
+  </div>
+</section>
+
+<section id="ceny">
+  <div class="wrap">
+    <h2 class="reveal">Мясо дня</h2>
+    <p class="sub reveal" style="--i:1">Что сегодня в наличии. Актуальные цены и остатки уточняйте по телефону.</p>
+    <div class="prod" id="prod"></div>
+  </div>
+</section>
+
+<section id="zakaz" style="background:#0e2124">
+  <div class="wrap">
+    <h2 class="reveal">Заказать на мангал</h2>
+    <p class="sub reveal" style="--i:1">Напишите, что нужно, и мы приготовим к вашему приезду. Заявка откроется в WhatsApp с готовым текстом.</p>
+    <div class="order">
+      <form class="box reveal" id="orderForm" style="--i:1">
+        <h3>Ваш заказ</h3>
+        <input class="fld" name="name" placeholder="Ваше имя" maxlength="40" required>
+        <select class="fld" name="item" id="orderItem" required></select>
+        <div class="two">
+          <input class="fld" name="qty" placeholder="Сколько (кг / шт)" maxlength="20" required>
+          <input class="fld" name="time" placeholder="Когда заберёте" maxlength="30">
+        </div>
+        <textarea class="fld" name="note" placeholder="Комментарий (замариновать, нарезать и т.д.)" maxlength="300"></textarea>
+        <button class="btn wa" type="submit" style="width:100%">Отправить в WhatsApp</button>
+      </form>
+      <div class="box reveal" style="--i:2">
+        <h3>Как это работает</h3>
+        <p>1. Заполните форму.<br>2. Откроется WhatsApp с вашим заказом.<br>3. Отправьте сообщение, мы подтвердим и всё подготовим.<br><br>Лучше заказывать заранее, особенно в сезон и на выходные.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="foto">
+  <div class="wrap">
+    <h2 class="reveal">Наш магазин</h2>
+    <p class="sub reveal" style="--i:1">Заходите посмотреть своими глазами.</p>
+    <div class="gal" id="gal">
+      <figure class="reveal" style="--i:0"><img src="photo1.jpg" alt="Магазин Горное мясо"><span class="ph" hidden>🏔️</span></figure>
+      <figure class="reveal" style="--i:1"><img src="photo2.jpg" alt="Свежее мясо"><span class="ph" hidden>🥩</span></figure>
+      <figure class="reveal" style="--i:2"><img src="photo3.jpg" alt="Ассортимент"><span class="ph" hidden>🍢</span></figure>
+    </div>
+  </div>
+</section>
+
+<section class="quote">
+  <p class="reveal">Горное мясо — <em>натуральные продукты</em>, свежесть и настоящий вкус Кавказа!</p>
+</section>
+
+<section id="otzyvy">
+  <div class="wrap">
+    <h2 class="reveal">Отзывы</h2>
+    <p class="sub reveal" style="--i:1">Были у нас? Расскажите, как вам мясо и сервис. Чтобы оставить отзыв, нужно войти или зарегистрироваться.</p>
+    <div class="ownerbar" id="ownerbar">Вы вошли как владелец: можно отвечать на отзывы и удалять их.</div>
+    <div class="rv-top">
+      <div class="box" id="reviewBox"></div>
+      <div class="box">
+        <h3>Средняя оценка</h3>
+        <p id="avg" style="font-size:44px;color:#ffd23d;font-family:Oswald,sans-serif">—</p>
+        <p id="cnt">Пока нет отзывов</p>
+      </div>
+    </div>
+    <div class="list" id="list"></div>
+  </div>
+</section>
+
+<section id="kontakty">
+  <div class="wrap">
+    <h2 class="reveal">Как нас найти</h2>
+    <p class="sub reveal" style="--i:1">Магазин стоит у дороги рядом с пешеходным переходом. Ищите светящуюся вывеску.</p>
+    <div class="cols">
+      <div class="reveal" style="--i:1">
+        <div class="row"><small>Адрес</small>
+          <a href="https://yandex.com/maps/11020/karachay-cherkess-republic/house/ulitsa_lenina_35/YEgYdABmSEMPQFppfXl3cHlrbA==/" target="_blank" rel="noopener">село Архыз, ул. Ленина, 35</a></div>
+        <div class="row"><small>Часы работы</small><span class="v" id="hoursText">—</span></div>
+        <div class="row"><small>Телефон</small><a href="tel:+79886060203">+7 (988) 606-02-03</a></div>
+        <div class="row"><small>Instagram</small><a href="https://www.instagram.com/meat_arkhyz" target="_blank" rel="noopener">@meat_arkhyz</a></div>
+        <div class="msgr">
+          <a class="btn wa" id="waBtn2" href="#" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn tg" id="tgBtn" href="#" target="_blank" rel="noopener">Telegram</a>
+        </div>
+      </div>
+      <div class="map reveal" style="--i:2">
+        <iframe title="Карта: Архыз, ул. Ленина, 35" loading="lazy"
+          src="https://yandex.ru/map-widget/v1/?text=%D0%90%D1%80%D1%85%D1%8B%D0%B7%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%9B%D0%B5%D0%BD%D0%B8%D0%BD%D0%B0%2C%2035&z=16"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>© Горное мясо, Архыз · Халяль</span><span>ул. Ленина, 35</span></div></footer>
+
+<div class="fabs">
+  <a class="fab wa" id="waFab" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+  <a class="fab call" href="tel:+79886060203" aria-label="Позвонить">📞</a>
+</div>
+
+<!-- Окно входа / регистрации / владельца -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Вход">
+  <div class="dlg">
+    <button class="x" type="button" id="close" aria-label="Закрыть">×</button>
+    <div class="tabs">
+      <button type="button" data-tab="fLogin" class="on">Вход</button>
+      <button type="button" data-tab="fReg">Регистрация</button>
+      <button type="button" data-tab="fOwner">Владелец</button>
+    </div>
+    <div class="msg" id="authMsg"></div>
+    <form id="fLogin" class="on" autocomplete="on">
+      <input class="fld" name="login" placeholder="Телефон или e-mail" required autocomplete="username">
+      <input class="fld" name="pass" type="password" placeholder="Пароль" required autocomplete="current-password">
+      <button class="btn main" type="submit">Войти</button>
+    </form>
+    <form id="fReg">
+      <input class="fld" name="name" placeholder="Ваше имя" maxlength="40" required autocomplete="name">
+      <input class="fld" name="login" placeholder="Телефон или e-mail" maxlength="60" required autocomplete="username">
+      <input class="fld" name="pass" type="password" placeholder="Пароль (минимум 6 символов)" minlength="6" required autocomplete="new-password">
+      <button class="btn main" type="submit">Зарегистрироваться</button>
+    </form>
+    <form id="fOwner">
+      <input class="fld" name="pass" type="password" placeholder="Пароль владельца" required autocomplete="current-password">
+      <button class="btn main" type="submit">Войти как владелец</button>
+    </form>
+  </div>
+</div>
+
+<script>
+/* ================== НАСТРОЙКИ ================== */
+// 1) Пароль владельца. Он виден в коде страницы, поэтому это не настоящая защита.
+const OWNER_PASSWORD = 'change-me-2026';
+
+// 2) Телефон для WhatsApp (без плюса и пробелов) и ссылка на Telegram
+const PHONE = '79886060203';
+const TG = 'https://t.me/+79886060203'; // лучше заменить на https://t.me/ваш_ник
+
+// 3) Часы работы (по времени Москвы). Поменяйте на настоящие!
+const HOURS = { open: 9, close: 21 };
+
+// 4) Мясо дня. Впишите цены, например price:'1200 ₽/кг'. Пустая цена = «уточняйте».
+const PRODUCTS = [
+  { e: '🥩', name: 'Говядина',   price: '' },
+  { e: '🐑', name: 'Баранина',   price: '' },
+  { e: '🍗', name: 'Курица',     price: '' },
+  { e: '🍢', name: 'Люля-кебаб', price: '' },
+  { e: '🐟', name: 'Форель',     price: '' },
+  { e: '🔥', name: 'Уголь для мангала', price: '' }
+];
+
+/* ================== ССЫЛКИ МЕССЕНДЖЕРОВ ================== */
+const waLink = (t) => 'https://wa.me/' + PHONE + (t ? '?text=' + encodeURIComponent(t) : '');
+['waBtn', 'waBtn2', 'waFab'].forEach(id => { const a = document.getElementById(id); if (a) a.href = waLink('Здравствуйте! Пишу с сайта Горное мясо.'); });
+document.getElementById('tgBtn').href = TG;
+
+/* ================== ЧАСЫ РАБОТЫ ================== */
+const pad = n => String(n).padStart(2, '0');
+document.getElementById('hoursText').textContent = 'Ежедневно ' + pad(HOURS.open) + ':00 – ' + pad(HOURS.close) + ':00';
+(function () {
+  let h;
+  try { h = +new Intl.DateTimeFormat('ru-RU', { timeZone: 'Europe/Moscow', hour: 'numeric', hourCycle: 'h23' }).format(new Date()); }
+  catch { h = new Date().getHours(); }
+  const open = h >= HOURS.open && h < HOURS.close;
+  const b = document.getElementById('openBadge');
+  b.classList.add(open ? 'open' : 'closed');
+  document.getElementById('openText').textContent = open ? 'Сейчас открыто до ' + pad(HOURS.close) + ':00' : 'Сейчас закрыто · с ' + pad(HOURS.open) + ':00';
+})();
+
+/* ================== МЯСО ДНЯ + ФОРМА ЗАКАЗА ================== */
+const prod = document.getElementById('prod'), sel = document.getElementById('orderItem');
+PRODUCTS.forEach(p => {
+  const d = document.createElement('div'); d.className = 'pi reveal';
+  const e = document.createElement('span'); e.className = 'e'; e.textContent = p.e;
+  const n = document.createElement('b'); n.textContent = p.name;
+  const pr = document.createElement('span'); pr.className = 'pr' + (p.price ? '' : ' no'); pr.textContent = p.price || 'Цену уточняйте';
+  d.append(e, n, pr); prod.append(d);
+  const o = document.createElement('option'); o.value = p.name; o.textContent = p.name; sel.append(o);
+});
+const oo = document.createElement('option'); oo.value = 'Другое'; oo.textContent = 'Другое (напишу в комментарии)'; sel.append(oo);
+
+document.getElementById('orderForm').onsubmit = e => {
+  e.preventDefault();
+  const f = new FormData(e.target);
+  const t = 'Здравствуйте! Хочу сделать заказ (сайт Горное мясо).\n' +
+    'Имя: ' + f.get('name') + '\n' +
+    'Товар: ' + f.get('item') + '\n' +
+    'Количество: ' + f.get('qty') + '\n' +
+    (f.get('time') ? 'Заберу: ' + f.get('time') + '\n' : '') +
+    (f.get('note') ? 'Комментарий: ' + f.get('note') : '');
+  window.open(waLink(t), '_blank', 'noopener');
+};
+
+/* ================== ФОТО: заглушка, если файла нет ================== */
+document.querySelectorAll('#gal figure').forEach(fig => {
+  const img = fig.querySelector('img'), ph = fig.querySelector('.ph');
+  const miss = () => { img.hidden = true; ph.hidden = false; };
+  img.addEventListener('error', miss);
+  if (img.complete && img.naturalWidth === 0) miss();
+});
+
+/* ================== ХРАНИЛИЩЕ (localStorage) ==================
+   Видно только на этом устройстве. Для общих отзывов замените get/set на запросы к серверу. */
+const store = {
+  get(k, d) { try { const v = JSON.parse(localStorage.getItem(k)); return v == null ? d : v; } catch { return d; } },
+  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} }
+};
+async function sha(s) {
+  try {
+    const b = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(s));
+    return [...new Uint8Array(b)].map(x => x.toString(16).padStart(2, '0')).join('');
+  } catch { return btoa(unescape(encodeURIComponent(s))); }
+}
+const $ = s => document.querySelector(s);
+
+let users = store.get('gm_users', []);
+let reviews = store.get('gm_reviews', []);
+let session = store.get('gm_session', null);
+let rating = 0;
+
+/* ================== ВХОД / РЕГИСТРАЦИЯ ================== */
+const modal = $('#modal'), authMsg = $('#authMsg');
+function openModal(tab) { setTab(tab || 'fLogin'); modal.classList.add('open'); }
+function closeModal() { modal.classList.remove('open'); }
+function setTab(id) {
+  document.querySelectorAll('.tabs button').forEach(b => b.classList.toggle('on', b.dataset.tab === id));
+  document.querySelectorAll('.dlg form').forEach(f => f.classList.toggle('on', f.id === id));
+  authMsg.textContent = '';
+}
+document.querySelectorAll('.tabs button').forEach(b => b.onclick = () => setTab(b.dataset.tab));
+$('#close').onclick = closeModal;
+modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+$('#acct').onclick = () => {
+  if (session) { session = null; store.set('gm_session', null); render(); }
+  else openModal('fLogin');
+};
+function login(s) { session = s; store.set('gm_session', s); closeModal(); render(); }
+
+$('#fReg').onsubmit = async e => {
+  e.preventDefault();
+  const f = new FormData(e.target);
+  const name = f.get('name').trim(), lg = f.get('login').trim().toLowerCase(), pass = f.get('pass');
+  if (pass.length < 6) return authMsg.textContent = 'Пароль слишком короткий';
+  if (users.some(u => u.login === lg)) return authMsg.textContent = 'Такой пользователь уже есть, войдите';
+  users.push({ name, login: lg, hash: await sha(pass) });
+  store.set('gm_users', users);
+  e.target.reset();
+  login({ type: 'user', login: lg, name });
+};
+$('#fLogin').onsubmit = async e => {
+  e.preventDefault();
+  const f = new FormData(e.target);
+  const lg = f.get('login').trim().toLowerCase();
+  const u = users.find(x => x.login === lg);
+  if (!u || u.hash !== await sha(f.get('pass'))) return authMsg.textContent = 'Неверный логин или пароль';
+  e.target.reset();
+  login({ type: 'user', login: u.login, name: u.name });
+};
+$('#fOwner').onsubmit = e => {
+  e.preventDefault();
+  if (new FormData(e.target).get('pass') !== OWNER_PASSWORD) return authMsg.textContent = 'Неверный пароль владельца';
+  e.target.reset();
+  login({ type: 'owner' });
+};
+
+/* ================== ОТЗЫВЫ ================== */
+const isOwner = () => session && session.type === 'owner';
+
+function renderForm() {
+  const box = $('#reviewBox'); box.textContent = '';
+  const h = document.createElement('h3'); box.append(h);
+  if (!session) {
+    h.textContent = 'Оставить отзыв';
+    const p = document.createElement('p'); p.textContent = 'Войдите или зарегистрируйтесь, чтобы написать отзыв.';
+    const b = document.createElement('button'); b.className = 'btn main'; b.style.marginTop = '16px'; b.textContent = 'Войти / Регистрация';
+    b.onclick = () => openModal('fReg');
+    box.append(p, b);
+  } else if (isOwner()) {
+    h.textContent = 'Режим владельца';
+    const p = document.createElement('p'); p.textContent = 'Отвечайте на отзывы и удаляйте лишние кнопками под каждым отзывом.';
+    box.append(p);
+  } else {
+    h.textContent = 'Ваш отзыв, ' + session.name;
+    const st = document.createElement('div'); st.className = 'stars';
+    for (let i = 1; i <= 5; i++) {
+      const s = document.createElement('button'); s.type = 'button'; s.textContent = '★'; s.setAttribute('aria-label', i + ' из 5');
+      s.onclick = () => { rating = i; st.querySelectorAll('button').forEach((x, k) => x.classList.toggle('on', k < i)); };
+      st.append(s);
+    }
+    const ta = document.createElement('textarea'); ta.className = 'fld'; ta.maxLength = 600; ta.placeholder = 'Что понравилось? Что можно улучшить?';
+    const m = document.createElement('div'); m.className = 'msg';
+    const b = document.createElement('button'); b.className = 'btn main'; b.textContent = 'Отправить отзыв';
+    b.onclick = () => {
+      const text = ta.value.trim();
+      if (!rating) return m.textContent = 'Поставьте оценку звёздами';
+      if (text.length < 3) return m.textContent = 'Напишите хотя бы пару слов';
+      reviews.push({ id: Date.now() + '' + Math.random().toString(36).slice(2, 6), login: session.login, name: session.name, rating, text, date: new Date().toISOString(), reply: '' });
+      store.set('gm_reviews', reviews);
+      rating = 0; render();
+    };
+    box.append(st, ta, m, b);
+  }
+}
+
+function renderList() {
+  const list = $('#list'); list.textContent = '';
+  if (!reviews.length) { const d = document.createElement('div'); d.className = 'empty'; d.textContent = 'Пока нет отзывов. Будьте первым!'; list.append(d); }
+  [...reviews].reverse().forEach(r => {
+    const el = document.createElement('article'); el.className = 'rev';
+    const hd = document.createElement('header');
+    const nm = document.createElement('b'); nm.textContent = r.name;
+    const st = document.createElement('span'); st.className = 'st'; st.textContent = '★'.repeat(r.rating) + '☆'.repeat(5 - r.rating);
+    const tm = document.createElement('time'); tm.textContent = new Date(r.date).toLocaleDateString('ru-RU');
+    hd.append(nm, st, tm);
+    const p = document.createElement('p'); p.textContent = r.text;
+    el.append(hd, p);
+    if (r.reply) {
+      const rp = document.createElement('div'); rp.className = 'reply';
+      const sm = document.createElement('small'); sm.textContent = 'Ответ магазина';
+      rp.append(sm, document.createTextNode(r.reply)); el.append(rp);
+    }
+    const mine = session && session.type === 'user' && session.login === r.login;
+    if (isOwner() || mine) {
+      const ops = document.createElement('div'); ops.className = 'ops';
+      if (isOwner()) {
+        const a = document.createElement('button'); a.textContent = r.reply ? 'Изменить ответ' : 'Ответить';
+        a.onclick = () => { const t = prompt('Ответ на отзыв:', r.reply || ''); if (t !== null) { r.reply = t.trim().slice(0, 500); store.set('gm_reviews', reviews); render(); } };
+        ops.append(a);
+      }
+      const d = document.createElement('button'); d.textContent = 'Удалить';
+      d.onclick = () => { if (confirm('Удалить отзыв?')) { reviews = reviews.filter(x => x.id !== r.id); store.set('gm_reviews', reviews); render(); } };
+      ops.append(d); el.append(ops);
+    }
+    list.append(el);
+  });
+}
+
+function render() {
+  $('#acct').textContent = session ? (isOwner() ? 'Владелец · Выйти' : session.name + ' · Выйти') : 'Войти';
+  $('#ownerbar').style.display = isOwner() ? 'block' : 'none';
+  const n = reviews.length;
+  $('#avg').textContent = n ? (reviews.reduce((s, r) => s + r.rating, 0) / n).toFixed(1) + ' ★' : '—';
+  $('#cnt').textContent = n ? 'Отзывов: ' + n : 'Пока нет отзывов';
+  renderForm(); renderList();
+}
+render();
+
+/* ================== АНИМАЦИИ ================== */
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+}), { threshold: .15 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+document.querySelectorAll('.card').forEach(c => c.addEventListener('pointermove', e => {
+  const r = c.getBoundingClientRect();
+  c.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+  c.style.setProperty('--my', (e.clientY - r.top) + 'px');
+}));
+
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+const layers = document.querySelectorAll('.layer');
+if (!reduce) addEventListener('scroll', () => {
+  const y = scrollY;
+  layers.forEach(l => l.style.transform = 'translateY(' + (y * l.dataset.speed) + 'px)');
+}, { passive: true });
+
+const cv = document.getElementById('snow'), ctx = cv.getContext('2d');
+let W, H, flakes = [];
+function size() { W = cv.width = cv.offsetWidth; H = cv.height = cv.offsetHeight; }
+size(); addEventListener('resize', size);
+for (let i = 0; i < 110; i++) flakes.push({
+  x: Math.random() * 2000, y: Math.random() * 1200,
+  r: Math.random() * 2 + .6, s: Math.random() * .2, d: Math.random() * Math.PI * 2
+});
+function snow() {
+  ctx.clearRect(0, 0, W, H);
+  ctx.fillStyle = 'rgba(255,255,255,.85)';
+  flakes.forEach(f => {
+    f.y += f.s; f.d += .01; f.x += Math.sin(f.d) * .5;
+    if (f.y > H) { f.y = -5; f.x = Math.random() * W; }
+    if (f.x > W) f.x = 0; if (f.x < 0) f.x = W;
+    ctx.beginPath(); ctx.arc(f.x, f.y, f.r, 0, 7); ctx.fill();
+  });
+  requestAnimationFrame(snow);
+}
+if (!reduce) snow();
+</script>
+
+<style>
+.saidbid-footer {
+  text-align: center;
+  padding: 45px 15px 25px;
+  margin-top: 50px;
+  border-top: 1px solid rgba(255,255,255,.12);
+}
+.saidbid-footer h2 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: 5px;
+  color: white;
+}
+.saidbid-footer h2 span {
+  color: #e53939;
+}
+.saidbid-footer p {
+  color: #888;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+</style>
+
+<footer class="saidbid-footer">
+  <h2>SAIDBID <span>REDACTION</span></h2>
+  <p>© 2026 • ALL RIGHTS RESERVED</p>
+  <p>Created by Saidbid</p>
+</footer>
+
+
+</body>
+</html>
