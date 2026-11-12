@@ -4,7 +4,7 @@
 ===================================== */
 
 const ADMIN_CONFIG = {
-  password: 'CHANGE_THIS_PASSWORD',
+  password: 'gornoetop1',
   storageKey: 'gornoe_miaso_settings'
 };
 
